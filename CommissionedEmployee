@@ -70,4 +70,5 @@ public class CommissionedEmployee extends Employee {
     public double earnings() {
         return getCommissionRate()*getGrossSales();
     }
+    
 }

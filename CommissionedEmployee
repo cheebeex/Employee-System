@@ -1,0 +1,73 @@
+//purpose: to encapsulate information about a CommissionedEmployee
+
+package employeeSystem;
+
+/**To encapsulate information about a CommissionedEmployee*/
+public class CommissionedEmployee extends Employee {
+    /**the amount this Employee sold this period*/
+    protected double grossSales;
+    /**the amount of each sale that the Employee makes*/
+    protected double commissionedRate;
+    
+    /**Creates a new CommissionedEmployee from the input data
+     * @param fistName the first name of the Employee
+     * @param lastName the last name of the Employee
+     * @param eid the eid of the Employee
+     * @param commissionRate the amount of each sale this Employee makess
+     */
+    public CommissionedEmployee(String firstName, String lastName, String eid, double commissionRate) {
+        super(firstName, lastName, eid);
+        setCommissionRate(commissionRate);
+        setGrossSales(0.0);
+    }
+    
+    /**Gets the gross sales of this Emoloyee
+     * @return the grossSales
+     */
+    public double getGrossSales() {
+        return grossSales;
+    }
+    
+    /**Sets the gross sales of this Employee
+     * @param grossSales the grossSales to set
+     */
+    public void setGrossSales(double grossSales) {
+        if (grossSales >= 0.0)
+            this.grossSales = grossSales;
+        else
+            this.grossSales = 0.0;
+    }
+    
+    /**Gets the commission rate of this Employee
+     * @return the commissionRate
+     */
+    public double getCommissionRate() {
+        return commissionRate;
+    }
+    
+    /**Sets the commission rate for this Employee
+     * @param commissionRate the commissionRate to set
+     */
+    public void setCommissionRate(double commissionRate) {
+        if (commissionRate >= 0 && commissionRate <= 1)
+            this.commissionRate = commissionRate;
+        else
+            this.commissionRate = 0.0;
+    }
+    
+    /**Returns a String version of the CommissionedEmployee
+     * @return the String
+     */
+    @Override
+    public String toString() {
+        return "Commissioned "+super.toString()+"\nCommission Rate: "+PERC.format(getCommissionRate());
+    }
+    
+    /**Gets the earnings for this CommissionedEmployee (grossSales*commissionRate)
+     * @return the earnings for this CommissionedEmoployee
+     */
+    @Override 
+    public double earnings() {
+        return getCommissionRate()*getGrossSales();
+    }
+}

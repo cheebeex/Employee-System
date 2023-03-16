@@ -18,6 +18,13 @@ public class SalariedEmployee extends Employee {
         setSalary(salary); 
     } 
     
+    /**Returns the salary of the Employee
+     * @return the salary
+     */
+    public double getSalary() {
+        return salary;
+    }
+    
     /**Sets the salary of the Employee IFF input > 0 
      * @param salary the salary to set
      */
@@ -31,6 +38,15 @@ public class SalariedEmployee extends Employee {
      */
     @Override
     public String toString() {
-        return "Salaried "+super.toString()+"\nSalary: "+currency.format(getSalary()); 
+        return "Salaried "+super.toString()+"\nSalary: "+MONEY.format(getSalary()); 
     } 
+    
+    /**Gets the earnings for this salaried Employee (just the salary)
+     * @return the Employee's salary
+     */
+    @Override
+    public double earnings() {
+            return double earnings() {
+                    return getSalary();
+            }
 }

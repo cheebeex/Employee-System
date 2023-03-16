@@ -1,2 +1,2 @@
 # Employee-System
-Employee payroll system for a company with hourly and salaried employees
+Employee payroll system for a company with hourly, commssioned, and salaried employees

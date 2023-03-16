@@ -2,6 +2,7 @@
 
 package employeeSystem; 
 
+import java.io.Serializable;
 import java.text.NumberFormat;
 
 import businessServices.Account;
@@ -111,7 +112,3 @@ public abstract class Employee implements Payable {
    
 
 }
-
-
-
-

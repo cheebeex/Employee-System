@@ -1,0 +1,61 @@
+//purpose: encapsulate an Employee that is paid by the hour
+
+package employeeSystem; 
+
+/**Encapsulates information about an Employee that is paid by the hour*/
+public class HourlyEmployee extends Employee {
+    /**The number of hours worked by the employee*/
+    protected double hours; 
+    /**The amount this employee should be paid per hour*/
+    protected double wages; 
+    
+    /**Creates a new HourlyEmployee with the input data
+     * @param firstName the first name of the Employee 
+     * @param lastName the last name of the Employee
+     * @param eid the employee id of the Employee 
+     * @param wage the wage of the Employee
+     */
+    public HourlyEmployee(String firstName, String lastName, String eid, double wage) { 
+        super(firstName, lastName, eid);
+        setWages(wage); 
+    }
+    
+    /**Gets the hours of this Employee
+     * @return the hours
+     */
+    public double getHours() { 
+        return hours;
+    }
+    
+    /**Sets the hours of this Employee
+      * @param hours the hours to set
+      */
+    public void setHours(double hours) {
+        if (hours > 0)
+            this.hours = hours; 
+    }
+    
+    /**Gets the wages of this Employee
+     * @return the wages
+     */
+    public double getWages() { 
+        return wages; 
+    }
+    
+    /**Sets the wages of this Employee
+     * @param wages the wages to set
+     */
+    public void setWages(double wages) {
+        if (wages > 0) 
+            this.wages = wages; 
+    }
+    
+    /**Returns a String version of the Employee
+     * @return String the String version of the Employee
+     */
+    @Override 
+    public String toString() { 
+        return "Hourly "+super.toString()+"\nWages: "+currency.format(getWages()); 
+    }
+}
+    

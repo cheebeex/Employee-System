@@ -55,7 +55,15 @@ public class HourlyEmployee extends Employee {
      */
     @Override 
     public String toString() { 
-        return "Hourly "+super.toString()+"\nWages: "+currency.format(getWages()); 
+        return "Hourly "+super.toString()+"\nWages: "+MONEY.format(getWages()); 
+    }
+    
+    /**Gets the earnings for an Hourly Employee (hours*wages)
+     * @return the earnings
+     */
+    @Override
+    public double earnings() {
+            return getHours()*getWages();
     }
 }
     

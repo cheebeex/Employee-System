@@ -44,6 +44,7 @@ public class EmployeeSystem {
             if (current instanceof HourlyEmployee) {
                 System.out.print("Please enter the number of hours "+current.getFirstName()+" "+current.getLastName()+" worked this month: "; 
                 input = scn.nextDouble();
+                ((HourlyEmployee) current).setHours(input);
             }
             else if (current instanceof CommissionedEmployee) {
                 System.out.print("Please enter the sales for "+current.getFirstName()+" "+current.getLastName()+" worked this month: ");
@@ -53,10 +54,12 @@ public class EmployeeSystem {
         }
         
         System.out.println("Monthly Payroll: ");
-        for (Employee current: listOfEmployees)
-            System.out.println(current+"\nEarnings: "+Employee.MONEY.format(current.earnings())+"\n");
-            scn.close();
-            scan.close();
+        for (Employee current: listOfEmployees) {
+            System.out.println(current+"\nEarnings: "+Employee.MONEY.format(current.earnings()));
+            System.out.println(current.processPayment(current.earnings())+"\n");
+        }
+        scn.close();
+        scan.close();
     }//end main
 }//end EmployeeSystem class
                 

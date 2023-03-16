@@ -1,0 +1,47 @@
+//purpose: to encapsulate information about an Account
+
+package businessServices; 
+
+import java.text.NumberFormat;
+
+/**To encapsulate information about an Account*/
+public class Account {
+    /**How much money the account has*/
+    private double balance; 
+    /**Formats currency*/
+    public static final NumberFormat MONEY_FORMATTER = NumberFormat.getCurrencyInstance(); 
+    
+    /**Creates a new account with a balance of 5000*/
+    public Account() {
+        this(5000);
+    }
+    
+    /**Creates a new account with the input balance
+     * @param balance the desired balance
+     */
+    public Account(double balance) {
+        setBalance(balance);
+    }
+    
+    /**Gets the balance for this Account
+     * @return the balance
+     */
+    public double getBalance() {
+        return balance;
+    }
+    
+    /**Sets the balance for this Account
+     * @param balance the balance to set
+     */
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+    
+    /**Returns a String version of the Account
+     * @return the String version of this Account
+     */
+    @Override
+    public String toString() {
+        return "Account Balance: "+MONEY_FORMATTER.format(balance); 
+    }
+}

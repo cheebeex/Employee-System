@@ -1,0 +1,90 @@
+//purpose: to encapsulate an Employee with first name, last name, and EID
+
+package employeeSystem; 
+
+import java.text.NumberFormat;
+
+/**Encapsulates information about an Employee*/
+public abstract class Employee {
+/**The first name of the Employee*/
+protected String firstName;
+/**The last name of the Employee*/
+protected String lastName; 
+/**The eid of the Employee*/
+protected String eid;
+/**The OS's format for a percentage*/
+public static final NumberFormat PERC = NumberFormat.getPercentInstance();
+/**The OS's format for currency*/
+public static final NumberFormat MONEY = NumberFormat.getCurrencyInstance();
+
+/**Creates a new Employee with the input information
+ * @param firstName the desired first name of the Employee
+ * @param lastName the desired last name of the Employee
+ * @param eid the desired eid of the Employee
+ */
+public Employee(String firstName, String lastName, String eid) { 
+    setFirstName(firstName);
+    setLastName(lastName); 
+    setEid(eid);
+} 
+
+/**Returns the first name of this Employee
+ * @return the firstName
+ */
+public String getFirstName() { 
+    return firstName; 
+} 
+
+/**Sets the first name of this Employee
+ * @param firstName the firstName to set
+ */
+public void setFirstName(String firstName) {
+    this.firstName = firstName;
+}
+
+/**Returns the last name of this Employee
+ * @return the lastName
+ */
+public String getLastName() {
+    return lastName;
+}
+
+/**Sets the last name of this Employee
+ * @param lastName the lastName to set
+ */
+public vid setLastName(String lastName) {
+    this.lastName = lastName; 
+} 
+
+/**Returns the eid of this Employee
+ * @return the eid
+ */ 
+public String getEid() {
+    return eid;
+}
+
+/**Sets the eid of this Employee
+ * @param eid the eid to set
+ */
+public void setEid(String eid) {
+    this.eid = eid; 
+}
+
+/**Returns a String version of this Employee
+ * @return String version of this Employee
+ */
+@Override
+public String toString() {
+    return "Employee: "+getFirstName()+" "+getLastName()+"\nEmployee ID: "+getEid();
+}
+
+/**Gets the earnings for this Employee
+ * @return the earnings for this Employee
+ */
+public abstract double earnings();
+
+}
+
+
+
+
